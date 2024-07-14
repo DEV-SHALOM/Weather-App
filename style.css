@@ -251,29 +251,6 @@ html {
 
    @media (max-width: 767px) {
 
-    html{
-      overflow-y: scroll;
-    }
-
-    html::-webkit-scrollbar-track{
-      background-color: indigo;
-    }
-
-    html::-webkit-scrollbar{
-
-      background-color: blue;
-      width: 15px;
-    }
-
-    html::-webkit-scrollbar-thumb{
-      background-color: black;
-      width: 20px;
-      height: 20px;
-    }
-
-    html::-webkit-scrollbar-button{
-      background:#02023e;
-    }
       .container{
         width: 100%;
 
