@@ -57,7 +57,7 @@ searchIcon.addEventListener("click", ()=>{
     let userInput = document.getElementById("userInput").value.toLowerCase();
     
 
-    const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${API_KEY}`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${API_KEY}`;
 
 
     if (userInput !== "") {
