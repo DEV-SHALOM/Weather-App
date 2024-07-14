@@ -275,10 +275,19 @@ html {
       background:#02023e;
     }
       .container{
-        width: 95%;
+        width: 100%;
+
+      }
+
+      .searchPlaceDiv{
+        gap: 7px;
+      }
+
+      .searchPlaceDiv > .searchBar{
+        width: 150px;
       }
 
       .weatherDiv{
-        width: 358px;
+        width: 301px;
       }
    }
