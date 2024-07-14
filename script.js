@@ -53,17 +53,22 @@ userInput.addEventListener("keypress", function(e) {
 })
 
 searchIcon.addEventListener("click", ()=>{
+    let userInput = document.getElementById("userInput");
+
+    let userInputValue = userInput.value;
     
-    let userInput = document.getElementById("userInput").value.toLowerCase();
     
 
-    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${API_KEY}`;
-
-
-    if (userInput !== "") {
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${userInputValue}&appid=${API_KEY}`;
+    
+    
+    if (userInputValue !== "") {
         fetch(API_URL)
         .then(response => response.json())
+        
         .then(data => {
+            
+            
             
             mainContainer.style.borderBottomLeftRadius = "0px";
             mainContainer.style.borderBottomRightRadius = "0px";
@@ -92,42 +97,44 @@ searchIcon.addEventListener("click", ()=>{
                 wind_direction.textContent = `${data.wind.deg}°`;
                 wind_direction_desc.textContent = `Wind Direction`;
                 
-                weatherImg.classList.add("animate__animated", "animate__fadeIn")
-                weatherImg.style.setProperty('--animate-duration', '3s')
+                weatherImg.classList.add("animate__animated", "animate__fadeIn");
+                weatherImg.style.setProperty('--animate-duration', '3s');
                 weatherImg.addEventListener("animationend", ()=>{
-                    weatherImg.classList.remove("animate__animated", "animate__fadeIn")
+                    weatherImg.classList.remove("animate__animated", "animate__fadeIn");
                 })
                 weatherImg.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
                 weatherImg.style.display = 'inline';
                 weatherImg.style.width = '90px';
                 
-                weatherType.classList.add("animate__animated", "animate__zoomInLeft")
-                weatherType.style.setProperty('--animate-duration', '0.8s')
+                weatherType.classList.add("animate__animated", "animate__zoomInLeft");
+                weatherType.style.setProperty('--animate-duration', '0.8s');
                 weatherType.addEventListener("animationend", ()=>{
-                    weatherType.classList.remove("animate__animated", "animate__zoomInLeft")
+                    weatherType.classList.remove("animate__animated", "animate__zoomInLeft");
                 })
                 weatherType.style.display = `block`;
                 weatherType.textContent = `${data.weather[0].main}`;
                 
                 country.style.marginTop = '-80px';
                 country.style.display = `block`;
-                country.textContent = `${userInput}, ${data.sys.country}`;
+                country.textContent = `${userInputValue}, ${data.sys.country}`;
+                userInputValue = "";
                 
-                feels_like.classList.add("animate__animated", "animate__slideInDown")
-                feels_like.style.setProperty('--animate-duration', '1s')
+                feels_like.classList.add("animate__animated", "animate__slideInDown");
+                feels_like.style.setProperty('--animate-duration', '1s');
                 feels_like.addEventListener("animationend", ()=>{
                     feels_like.classList.remove("animate__animated", "animate__slideInDown");
                 })
                 feels_like.style.display = `block`;
                 feels_like.textContent = `${(data.main.feels_like - 273.15).toFixed(2)}°c`;
                 
-                weather_description.classList.add("animate__animated", "animate__rollIn")
-                weather_description.style.setProperty('--animate-duration', '1s')
+                weather_description.classList.add("animate__animated", "animate__rollIn");
+                weather_description.style.setProperty('--animate-duration', '1s');
                 weather_description.addEventListener("animationend", ()=>{
-                    weather_description.classList.remove("animate__animated", "animate__rollIn")
+                    weather_description.classList.remove("animate__animated", "animate__rollIn");
                 })
                 weather_description.style.display = `inline`;
                 weather_description.textContent = `${(data.weather[0].description).trim().toUpperCase().charAt(0) + data.weather[0].description.slice(1)}`;
+                
                 
             }) .catch(error => {
 
@@ -156,7 +163,7 @@ searchIcon.addEventListener("click", ()=>{
                 country.style.marginTop = '50px';
                 country.textContent = `Oops!, Error Finding Country`;
                 
-                userInput.value = "";
+                userInputValue = "";
                 
             })
         } else {
@@ -171,7 +178,7 @@ searchIcon.addEventListener("click", ()=>{
             feels_like.style.display = `none`;
             weatherType.style.display = `none`;
             weatherDetails.style.display = 'flex';
-
+            
             
             weatherImg.classList.add("animate__animated", "animate__jackInTheBox")
             weatherImg.style.setProperty('--animate-duration', '1s')
@@ -184,6 +191,8 @@ searchIcon.addEventListener("click", ()=>{
             country.style.display = 'block';
             country.style.marginTop = '50px';
             country.textContent = `Oops!, Error Finding Country`;
+
+            userInputValue = "";
         }
         
         

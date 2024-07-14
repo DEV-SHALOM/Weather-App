@@ -290,4 +290,13 @@ html {
       .weatherDiv{
         width: 301px;
       }
+
+      .weatherDetails{
+        gap: 40px;
+      }
+
+
+      .windDirDiv{
+        margin-top: 20px;
+      }
    }
