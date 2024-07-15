@@ -19,51 +19,52 @@
     <title>Know-Your-Country.</title>
   </head>
   <body>
-    <div class="container" id="container">
-      <div class="searchPlaceDiv"  id="searchPlaceDiv">
+
+      <div class="container" id="container">
+        <div class="searchPlaceDiv"  id="searchPlaceDiv">
           <input id="userInput" placeholder="Enter your country or city" autocomplete="on" class="searchBar" type="text">
           <a id="iconSearch" href="#"><i aria-label="Search Button" class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+      </di>
+    <div class="weatherDiv" id="weatherDivCont">
+      <div id="" class="countryNameDiv">
+        <h3 id="weatherType"></h3>
+        <img id="weatherImg" alt="Weather Image">
+        <h4 id="temperature"></h4>
+        <h2 id="countryName"></h2>
+        <p id="weatherDescription"></p>
       </div>
-    </div>
-  <div class="weatherDiv" id="weatherDivCont">
-    <div id="" class="countryNameDiv">
-      <h3 id="weatherType"></h3>
-      <img id="weatherImg" alt="Weather Image">
-      <h4 id="temperature"></h4>
-      <h2 id="countryName"></h2>
-      <p id="weatherDescription"></p>
-    </div>
-    <hr>
-    <div id="weatherDetailsDiv" class="weatherDetails">
-
-      <div id="humidityDiv" class="humidityDiv">
-        <i id="humidityIcon" class="fa-solid fa-water"></i>
-        <div>
-          <p id="humidity"></p>
-          <p id="humidityDesc"></p>
+      <hr>
+      <div id="weatherDetailsDiv" class="weatherDetails">
+  
+        <div id="humidityDiv" class="humidityDiv">
+          <i id="humidityIcon" class="fa-solid fa-water"></i>
+          <div>
+            <p id="humidity"></p>
+            <p id="humidityDesc"></p>
+          </div>
+        </div>
+  
+        <div id="windDiv" class="windDiv">
+          <i id="windSpeedIcon" class="fa-solid fa-wind"></i>
+          <div>
+            <p id="windSpeed"></p>
+            <p id="windSpeedDesc"></p>
+          </div>
+        </div>
+  
+        <div id="windDirDiv" class="windDirDiv">
+          <i id="windDirectionIcon" class="fa-solid fa-circle-arrow-up"></i>
+          <div>
+            <p id="windDirection"></p>
+            <p id="windDirectionDesc"></p>
+          </div>
+  
         </div>
       </div>
-
-      <div id="windDiv" class="windDiv">
-        <i id="windSpeedIcon" class="fa-solid fa-wind"></i>
-        <div>
-          <p id="windSpeed"></p>
-          <p id="windSpeedDesc"></p>
-        </div>
-      </div>
-
-      <div id="windDirDiv" class="windDirDiv">
-        <i id="windDirectionIcon" class="fa-solid fa-circle-arrow-up"></i>
-        <div>
-          <p id="windDirection"></p>
-          <p id="windDirectionDesc"></p>
-        </div>
-
-      </div>
     </div>
-  </div>
 
     <script src="https://kit.fontawesome.com/86c2fd87c2.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer=""></script>
+    <script src="index.js"></script>
   </body>
 </html>
