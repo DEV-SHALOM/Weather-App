@@ -54,6 +54,8 @@ userInput.addEventListener("keypress", function(e) {
 searchIcon.addEventListener("click", ()=>{
     let userInput = document.getElementById("userInput");
 
+    userInput.blur();
+
     let userInputValue = userInput.value.trim();
     
     
