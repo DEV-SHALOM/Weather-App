@@ -1,4 +1,6 @@
-const API_KEY = "3a2318ba258a4c8cbfb658569e17f103";
+process.env.API_KEY;
+
+// const API_KEY = "";
 
 const searchIcon = document.getElementById("iconSearch");
 const weatherType = document.getElementById("weatherType");
