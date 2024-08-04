@@ -1,4 +1,9 @@
+
+import inject from "@vercel/analytics";
+
 const API_KEY = "3a2318ba258a4c8cbfb658569e17f103";
+
+
 
 const searchIcon = document.getElementById("iconSearch");
 const weatherType = document.getElementById("weatherType");
